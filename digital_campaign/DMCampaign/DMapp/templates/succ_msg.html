@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Campaign Conversion Status </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>AdSpend:{{data_ad}}</p>
+      <p>ClickThroughRate:{{data_ctr}}</p>
+      <p>ConversionRate:{{data_cr}}</p>
+      <p>WebsiteVisits:{{data_wv}}</p>
+      <p>PagesPerVisit:{{data_ppv}}</p>
+      <p>TimeOnSite:{{data_ts}}</p>
+      <p>SocialShares:{{data_ss}}</p>
+      <p>EmailOpens:{{data_eo}}</p>
+      <p>EmailClicks:{{data_ec}}</p>
+      <p>PreviousPurchases:{{data_pp}}</p>
+      <p>LoyaltyPoints:{{data_lp}}</p>
+      <p>CampaignType_Consideration:{{data_ctc}}</p>
+      <br>
+      {% if out == 1 %}
+        <p><b>  Status</b>: User will  <b> convert</b></p>
+      {% else %}
+        <p><b> Status</b>: User will  <b> not convert</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'DMapp:DMC' %}">Conversion Predicition</a>
+    <br>
+</div>
+{% endblock %}
